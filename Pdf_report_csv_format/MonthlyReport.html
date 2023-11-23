@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Book Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .navbar h1{
+            margin-left: 200px;
+            color:azure;
+        }
+        .book{
+            margin-left: 250px;
+        }
+        .book h3{
+            font-size: 20px;
+        }
+        .book h2{
+            font-size: 40px;
+        }
+        .navbar{
+            background:#009879 ;
+            padding:10px;
+        }
+        h4{
+            margin-left: 250px;
+        }
+        .styled-table {
+    border-collapse: collapse;
+    margin-left:200px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    width: 70%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    height:100px;
+     }
+     .styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+    <h1>User Monthly Activities Report</h1>
+    </div>
+    <br>
+    <div class="book">
+    <h2>User Information</h2>
+    <h3><strong>Name:</strong> {{ data.username }}</h3>
+    <h3><strong>Email:</strong> {{ data.email }}</h3>
+    <p>This is a monthly report generated for user of Ticket Booking.</p>
+    <p>This report gives you a breif glimpse of your </p>
+    <P>past months activities.The shows you booked,in which theatres</P>
+    <p>you booked the shows are generated below:</p>
+    <br>
+    <h3>Bookings Details</h3>
+    </div>
+    {% for book in data.books %}
+    {% for venue in data.venues %}
+    {% if book.books.venue_id == venue.venue.id %}
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Seats Booked</th>
+                <th>Theatre Name</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="active-row">
+                <td>{{ book.books.id }}</td>
+                <td>{{ book.books.seats }}</td>
+                <td>{{ venue.venue.name }}</td>
+                <td>{{ venue.venue.location }}</td>
+            </tr>
+        </tbody>
+        {% if venue.venue.shows %}
+            {% for show in venue.venue.shows %}
+            {% if book.books.show_id == show.id %}          
+        <thead>
+            <tr>
+                <th>Show</th>
+                <th>Show Genre</th>
+                <th>Time</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="active-row">
+                <td>{{ show.name }}</td>
+                <td>{{ show.tags }}</td>
+                <td>{{ show.show_time }}</td>
+                <td>{{ show.rating }}</td>
+            </tr>
+        </tbody>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </table>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+    <br>
+    <h4>
+        Warm Regards,
+    </h4>
+        <h4>
+      Ticket Booking 
+        </h4>
+
+</body>
+</html>
+

@@ -1,0 +1,434 @@
+basePath: /
+consumes:
+- application/json
+info:
+  description: My API description
+  title: My API
+  version: '1.0'
+paths:
+  /api/generate_summary:
+    get:
+      operationId: get_summary_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/get/venue:
+    delete:
+      operationId: delete_venue_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    get:
+      operationId: get_venue_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    post:
+      operationId: post_venue_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    put:
+      operationId: put_venue_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/login:
+    post:
+      operationId: post_login_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/logout:
+    post:
+      operationId: post_logout_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/post/book/{id}/{venue_id}/{show_id}:
+    get:
+      operationId: get_booking_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    parameters:
+    - in: path
+      name: id
+      required: true
+      type: integer
+    - in: path
+      name: venue_id
+      required: true
+      type: integer
+    - in: path
+      name: show_id
+      required: true
+      type: integer
+    post:
+      operationId: post_booking_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/post/venue:
+    delete:
+      operationId: delete_venue
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    get:
+      operationId: get_venue
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    post:
+      operationId: post_venue
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    put:
+      operationId: put_venue
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/post/{id}/{show_id}/rating:
+    parameters:
+    - in: path
+      name: id
+      required: true
+      type: integer
+    - in: path
+      name: show_id
+      required: true
+      type: integer
+    post:
+      operationId: post_rating_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/search:
+    post:
+      operationId: post_search_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/user:
+    get:
+      operationId: get_user_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    post:
+      operationId: post_user_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/{id}/admin:
+    get:
+      operationId: get_admin_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    parameters:
+    - in: path
+      name: id
+      required: true
+      type: integer
+  /api/{id}/get/bookings:
+    get:
+      operationId: get_booking
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    parameters:
+    - in: path
+      name: id
+      required: true
+      type: integer
+    post:
+      operationId: post_booking
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/{id}/user:
+    get:
+      operationId: get_user
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    parameters:
+    - in: path
+      name: id
+      required: true
+      type: integer
+    post:
+      operationId: post_user
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/{show_id}/get/show:
+    delete:
+      operationId: delete_show_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    get:
+      operationId: get_show_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    parameters:
+    - in: path
+      name: show_id
+      required: true
+      type: integer
+    post:
+      operationId: post_show_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    put:
+      operationId: put_show_api
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/{venue_id}/delete/venue:
+    delete:
+      operationId: delete_venue_
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    get:
+      operationId: get_venue_
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    parameters:
+    - in: path
+      name: venue_id
+      required: true
+      type: integer
+    post:
+      operationId: post_venue_
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    put:
+      operationId: put_venue_ap
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/{venue_id}/post/show:
+    delete:
+      operationId: delete_show_ap
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    get:
+      operationId: get_show_ap
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    parameters:
+    - in: path
+      name: venue_id
+      required: true
+      type: integer
+    post:
+      operationId: post_show_ap
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    put:
+      operationId: put_show_ap
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/{venue_id}/put/venue:
+    delete:
+      operationId: delete_venue_ap
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    get:
+      operationId: get_venue_ap
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    parameters:
+    - in: path
+      name: venue_id
+      required: true
+      type: integer
+    post:
+      operationId: post_venue_ap
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    put:
+      operationId: put_venue_a
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/{venue_id}/{show_id}/delete/show:
+    delete:
+      operationId: delete_show_a
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    get:
+      operationId: get_show_a
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    parameters:
+    - in: path
+      name: venue_id
+      required: true
+      type: integer
+    - in: path
+      name: show_id
+      required: true
+      type: integer
+    post:
+      operationId: post_show_a
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    put:
+      operationId: put_show_a
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+  /api/{venue_id}/{show_id}/put/show:
+    delete:
+      operationId: delete_show
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    get:
+      operationId: get_show
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    parameters:
+    - in: path
+      name: venue_id
+      required: true
+      type: integer
+    - in: path
+      name: show_id
+      required: true
+      type: integer
+    post:
+      operationId: post_show
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+    put:
+      operationId: put_show
+      responses:
+        '200':
+          description: Success
+      tags:
+      - default
+produces:
+- application/json
+responses:
+  MaskError:
+    description: When any error occurs on mask
+  ParseError:
+    description: When a mask can't be parsed
+swagger: '2.0'
+tags:
+- description: Default namespace
+  name: default
