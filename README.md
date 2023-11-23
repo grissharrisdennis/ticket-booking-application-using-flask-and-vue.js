@@ -32,6 +32,8 @@ cd my-vue-app
 add node modules using 
 npm install
 i have'nt uploaded the node modules along with the folder ,above command reads the package.json to install the necessary packages if you need it.)
+install vue-star-rating used in rating the shows by entering below command
+npm install vue-star-ratings --save
 
 run server using 
 npm run serve
